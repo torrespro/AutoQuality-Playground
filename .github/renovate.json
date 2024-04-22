@@ -1,0 +1,3 @@
+{
+  "extends": ["github>torrespro/renovate-config"]
+}

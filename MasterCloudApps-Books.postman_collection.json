@@ -1,0 +1,1024 @@
+{
+	"info": {
+		"_postman_id": "1a68b0cd-f974-4cf4-9445-72db75c1d19d",
+		"name": "MasterCloudApps-Books",
+		"description": "Books & comments REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get the list of users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nickname\": \"torres\",\n    \"email\": \"correo@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"otrocorreo@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/users/torres",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"torres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"otrocorreo@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/users/torres",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"torres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments from a User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"otrocorreo@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/users/juan/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"juan",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"otrocorreo@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/users/torres",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"torres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the list of books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () { pm.response.to.have.status(201); });",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test data type of the response\", () => {",
+							"  pm.expect(jsonData).to.be.an(\"object\");",
+							"  pm.expect(jsonData.id).to.be.a(\"number\");",
+							"});",
+							"pm.test(\"Location header is present\", () => {",
+							"  pm.response.to.have.header(\"Location\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author\": \"Octavio Prohaska DVM\",\n    \"publicationYear\": 1973,\n    \"publisher\": \"Ego Dominus Tuus\",\n    \"summary\": \"Eius provident repellendus ea quis non deserunt. Perspiciatis consequatur quisquam distinctio et et voluptatem qui. Aperiam quos nam repudiandae eaque voluptatem facere corporis.\",\n    \"title\": \"Have His Carcase\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Save a book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": null,\n    \"published_year\": null,\n    \"publisher\": null,\n    \"summary\": null,\n    \"title\": \"El Quijote\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/books/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:8080/books/10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 07:25:08 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 10,\n    \"title\": \"El Quijote\",\n    \"summary\": null,\n    \"author\": null,\n    \"publisher\": null,\n    \"published_year\": null,\n    \"comments\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "Create a book with invalid data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test response is an error\", () => {",
+							"  pm.expect(jsonData).to.be.an(\"object\");",
+							"  pm.expect(jsonData.code).to.eql(\"VALIDATION_FAILED\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author\": null,\n    \"published_year\": null,\n    \"publisher\": null,\n    \"summary\": null,\n    \"title\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Save a book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": null,\n    \"published_year\": null,\n    \"publisher\": null,\n    \"summary\": null,\n    \"title\": \"El Quijote\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/books/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:8080/books/10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 07:25:08 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 10,\n    \"title\": \"El Quijote\",\n    \"summary\": null,\n    \"author\": null,\n    \"publisher\": null,\n    \"published_year\": null,\n    \"comments\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "Get a book by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+							"/* response has this structure:",
+							"{",
+							"    \"author\": \"Octavio Prohaska DVM\",",
+							"    \"comments\": [",
+							"        {",
+							"            \"id\": 1,",
+							"            \"rating\": 4,",
+							"            \"text\": \"Commodi voluptatem provident veritatis consequatur.\",",
+							"            \"username\": \"Colene Brakus\"",
+							"        },",
+							"        {",
+							"            \"id\": 2,",
+							"            \"rating\": 5,",
+							"            \"text\": \"Et nihil a vel quibusdam officiis quia.\",",
+							"            \"username\": \"Boris Padberg\"",
+							"        }",
+							"    ],",
+							"    \"id\": 2,",
+							"    \"published_year\": 1973,",
+							"    \"publisher\": \"Ego Dominus Tuus\",",
+							"    \"summary\": \"Eius provident repellendus ea quis non deserunt. Perspiciatis consequatur quisquam distinctio et et voluptatem qui. Aperiam quos nam repudiandae eaque voluptatem facere corporis.\",",
+							"    \"title\": \"Have His Carcase\"",
+							"}",
+							"*/",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test data type of the response\", () => {",
+							"  pm.expect(jsonData).to.be.an(\"object\");",
+							"  pm.expect(jsonData.id).to.be.a(\"number\");",
+							"  pm.expect(jsonData.title).to.be.a(\"string\");",
+							"  pm.expect(jsonData.comments).to.be.an(\"array\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/books/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a book by non existing id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test response is an error\", () => {",
+							"  pm.expect(jsonData).to.be.an(\"object\");",
+							"  pm.expect(jsonData.code).to.eql(\"BOOK_NOT_FOUND\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/books/99999",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"99999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a comment by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/books/1/comments/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"1",
+						"comments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a comment by non existing Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test response is an error\", () => {",
+							"  pm.expect(jsonData).to.be.an(\"object\");",
+							"  pm.expect(jsonData.code).to.eql(\"COMMENT_NOT_FOUND\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/books/1/comments/99999",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"1",
+						"comments",
+						"99999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new comment to a book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () { pm.response.to.have.status(201); });",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test data type of the response\", () => {",
+							"  pm.expect(jsonData).to.be.an(\"object\");",
+							"  pm.expect(jsonData.id).to.be.a(\"number\");",
+							"  pm.expect(jsonData.username).to.be.a(\"string\");",
+							"  pm.expect(jsonData.text).to.be.a(\"string\");",
+							"});",
+							"pm.test(\"Location header is present\", () => {",
+							"  pm.response.to.have.header(\"Location\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"rating\": 3,\n\"text\": \"comment bueno\",\n\"username\": \"juan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books/1/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a new comment to a book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"rating\": 3,\n\"text\": \"comment\",\n\"username\": \"username\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/books/1/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:8080/books/1/comments/11"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 07:25:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 11,\n    \"username\": \"username\",\n    \"text\": \"comment\",\n    \"rating\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "Add a new comment to a non existing book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test response is an error\", () => {",
+							"  pm.expect(jsonData).to.be.an(\"object\");",
+							"  pm.expect(jsonData.code).to.eql(\"BOOK_NOT_FOUND\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"rating\": 3,\n\"text\": \"comment\",\n\"username\": \"username\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books/99999/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"99999",
+						"comments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a new comment to a book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"rating\": 3,\n\"text\": \"comment\",\n\"username\": \"username\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/books/1/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:8080/books/1/comments/11"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 07:25:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 11,\n    \"username\": \"username\",\n    \"text\": \"comment\",\n    \"rating\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "Add a new comment to a book with invalid data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test response is an error\", () => {",
+							"  pm.expect(jsonData).to.be.an(\"object\");",
+							"  pm.expect(jsonData.code).to.eql(\"VALIDATION_FAILED\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"rating\": 6,\n\"text\": \"\",\n\"username\": \"u\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books/1/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a new comment to a book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"rating\": 3,\n\"text\": \"comment\",\n\"username\": \"username\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/books/1/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:8080/books/1/comments/11"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 07:25:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 11,\n    \"username\": \"username\",\n    \"text\": \"comment\",\n    \"rating\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a comment from a book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () { pm.response.to.have.status(204); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/books/1/comments/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"1",
+						"comments",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () { pm.response.to.have.status(204); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/books/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
