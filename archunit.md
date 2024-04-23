@@ -88,6 +88,11 @@
             </build>
         </profile>
 
+## Build
+
+    mvn clean install -f quality-rules/archunit-rules/pom.xml
+
+
 ## Usage
 
     mvn clean test -Parchunit

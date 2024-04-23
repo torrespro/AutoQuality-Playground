@@ -1,0 +1,6 @@
+before_install:
+  - sdk install java 11.0.10-open
+  - sdk use java 11.0.10-open
+install:
+  - echo "Running a maven install command"
+  - mvn clean install -f quality-rules/errorprone-bugpatterns/pom.xml

@@ -11,6 +11,10 @@
 
 ## Build
 
+    mvn clean install -f quality-rules/zally-openapi-lint-rules/pom.xml
+
+## Use
+
     mvn clean compile -Pzally
 
 ## Useful links
