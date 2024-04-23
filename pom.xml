@@ -398,6 +398,11 @@
                                     <artifactId>error_prone_core</artifactId>
                                     <version>2.26.1</version>
                                 </path>
+                                <path>
+                                    <groupId>es.torres</groupId>
+                                    <artifactId>my-bugchecker-plugin</artifactId>
+                                    <version>1.0-SNAPSHOT</version>
+                                </path>
                             </annotationProcessorPaths>
                             <showWarnings>true</showWarnings>
                             <!-- <failOnWarning>true</failOnWarning> -->
@@ -421,8 +426,8 @@
                                 <arg>-XDcompilePolicy=simple</arg>
                                 <arg>
                                     -Xplugin:ErrorProne
-                                    -XepDisableAllChecks
-                                    -Xep:Unused:WARN
+<!--                                    -XepDisableAllChecks-->
+<!--                                    -Xep:Unused:WARN-->
                                     <!-- We use a separate Maven profile to
                                     raise all warnings as errors. This way one
                                     can optionally collect all warnings without
@@ -480,6 +485,11 @@
                                     <groupId>com.google.errorprone</groupId>
                                     <artifactId>error_prone_core</artifactId>
                                     <version>2.26.1</version>
+                                </path>
+                                <path>
+                                    <groupId>es.torres</groupId>
+                                    <artifactId>my-bugchecker-plugin</artifactId>
+                                    <version>1.0-SNAPSHOT</version>
                                 </path>
                             </annotationProcessorPaths>
                             <showWarnings>true</showWarnings>

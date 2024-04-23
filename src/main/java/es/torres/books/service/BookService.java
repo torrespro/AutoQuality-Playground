@@ -22,6 +22,9 @@ import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * TODO 2024-01-01 This is a test TODO comment in a class.
+ */
 @Service
 public class BookService {
 
@@ -29,6 +32,9 @@ public class BookService {
     final CommentRepository commentRepository;
     final UserRepository userRepository;
 
+    /**
+     * TODO 2024-01-01 This is a test TODO comment in a variable.
+     */
     private final BookMapper mapper;
     private final CommentMapper commentMapper;
     private final UserMapper userMapper;
@@ -52,6 +58,9 @@ public class BookService {
         return mapper.entityListToApiList(bookRepository.findAll());
     }
 
+    /**
+     * TODO 2024-01-01 This is a test TODO comment in a method.
+     */
     @Transactional(readOnly = true)
     public Book findById(long id) {
         return mapper.entityToApi(bookRepository.findById(id).orElseThrow(() -> new BookNotFoundException(id)));
