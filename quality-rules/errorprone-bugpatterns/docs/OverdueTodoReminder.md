@@ -1,10 +1,10 @@
-## BugPattern: OverdueTodoReminder
+# BugPattern: OverdueTodoReminder
 
-This BugPattern detects TODO comments in Java source code and sends reminders if more than 30 days have passed since the TODO was created.
+This BugPattern detects TODO comments in Java source code and raises an error if more than 30 days have passed since the TODO was created.
 
 ### Summary
 
-The `OverdueTodoReminder` BugPattern identifies TODO comments that have surpassed their designated completion date. It assists in enforcing timely completion of tasks by notifying developers when overdue TODOs are present in the codebase.
+The `OverdueTodoReminder` BugPattern identifies overdue TODO comments, signaling critical issues that must be resolved promptly to maintain code quality and completeness.
 
 ### Example
 
@@ -17,19 +17,18 @@ public class MyClass {
 }
 ```
 
-If the current date is after December 31, 2023 (by more than 30 days), the `OverdueTodoReminder` will issue a warning about the overdue TODO comment.
+If the current date is after December 31, 2023 (by more than 30 days), the `OverdueTodoReminder` will raise an error due to the overdue TODO comment.
 
 ### How to Fix
 
-To resolve the `OverdueTodoReminder` warning, consider the following actions:
+To resolve the `OverdueTodoReminder` error, take immediate action on the associated task:
 
-1. **Address the TODO**: Evaluate the task associated with the TODO comment and take appropriate action to complete or remove it.
-2. **Update the Deadline**: If the task is still relevant but unfinished, update the TODO comment with a revised completion date.
-3. **Remove Unused TODOs**: Remove obsolete or unnecessary TODO comments from the codebase.
+1. **Address the TODO**: Complete the task specified by the TODO comment.
+2. **Remove or Update**: If the task is no longer relevant, remove the TODO comment. Otherwise, update it with a revised completion date or action plan.
 
 ### Suppression
 
-Suppress the `OverdueTodoReminder` warning using `@SuppressWarnings("OverdueTodoReminder")` on the line containing the TODO comment:
+Suppressing the `OverdueTodoReminder` error is discouraged due to its critical nature. However, if necessary, use `@SuppressWarnings("OverdueTodoReminder")` directly above the TODO comment to acknowledge and suppress the error.
 
 ```java
 @SuppressWarnings("OverdueTodoReminder")
@@ -39,8 +38,6 @@ public class MyClass {
 }
 ```
 
-Apply the suppression annotation directly above the TODO comment to acknowledge and suppress the warning.
-
 ### Severity
 
-The severity level for `OverdueTodoReminder` is set to `WARNING`, indicating a non-critical issue that should be addressed for code maintenance and cleanliness.
+The severity level for `OverdueTodoReminder` is set to `ERROR`, indicating that overdue TODO comments will prevent successful compilation of the code until addressed. This ensures timely resolution of tasks and maintains code quality.

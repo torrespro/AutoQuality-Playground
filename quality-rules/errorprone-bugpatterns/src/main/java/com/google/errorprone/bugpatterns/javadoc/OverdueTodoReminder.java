@@ -22,6 +22,8 @@ import java.util.regex.Pattern;
 @AutoService(BugChecker.class)
 @BugPattern(
     name = "OverdueTodoReminder",
+    linkType = BugPattern.LinkType.CUSTOM,
+    link = "https://github.com/torrespro/AutoQuality-Playground/blob/main/quality-rules/errorprone-bugpatterns/docs/OverdueTodoReminder.md",
     summary = "Finds TODO comments and sends a reminder if more than 30 days have passed",
     severity = BugPattern.SeverityLevel.ERROR
 )
