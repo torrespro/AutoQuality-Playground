@@ -13,6 +13,8 @@ La aplicación también incluye una API REST para gestionar libros, comentarios 
 
 ## Quality Automation Tools
 
+Navigate to each one of the links to learn more about the tools, the configuration, the customisation and how to use, also a demo in the demo project:
+
 - [Error Prone](error-prone.md)
 
 - [Arch Unit](archunit.md)
