@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.torrespro</groupId>
-    <version>0.0.1</version>
+    <version>1.0.0</version>
     <artifactId>error-prone-contrib</artifactId>
     <description>Example ErrorProne BugPatterns</description>
 
