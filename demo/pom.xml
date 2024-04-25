@@ -117,10 +117,15 @@
             <version>1.2.1</version>
         </dependency>
         <dependency>
-            <groupId>es.torres</groupId>
+            <groupId>com.github.torrespro.AutoQuality-Playground</groupId>
             <artifactId>archunit-rules</artifactId>
-            <version>0.0.1</version>
+            <version>main-e12157d2e0-1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.torrespro.AutoQuality-Playground</groupId>
+            <artifactId>zally-openapi-lint-rules</artifactId>
+            <version>main-e12157d2e0-1</version>
         </dependency>
 
     </dependencies>
@@ -285,9 +290,9 @@
                         <dependencies>
                             <!-- The pluggable rule-set you want to run -->
                             <dependency>
-                                <groupId>es.torres</groupId>
+                                <groupId>com.github.torrespro.AutoQuality-Playground</groupId>
                                 <artifactId>zally-openapi-lint-rules</artifactId>
-                                <version>0.0.1</version>
+                                <version>main-e12157d2e0-1</version>
                             </dependency>
                             <!--              <dependency>-->
                             <!--                <groupId>org.zalando</groupId>-->
@@ -367,9 +372,9 @@
                         <dependencies>
                             <dependency>
                                 <!-- dependency contains com.mycompany.rules.CustomArchRule -->
-                                <groupId>es.torres</groupId>
+                                <groupId>com.github.torrespro.AutoQuality-Playground</groupId>
                                 <artifactId>archunit-rules</artifactId>
-                                <version>0.0.1</version>
+                                <version>main-e12157d2e0-1</version>
                             </dependency>
                         </dependencies>
                     </plugin>
@@ -399,9 +404,9 @@
                                     <version>2.26.1</version>
                                 </path>
                                 <path>
-                                    <groupId>es.torres.error-prone-support</groupId>
-                                    <artifactId>error-prone-contrib</artifactId>
+                                    <groupId>com.github.torrespro</groupId>
                                     <version>0.0.1</version>
+                                    <artifactId>error-prone-contrib</artifactId>
                                 </path>
                             </annotationProcessorPaths>
                             <showWarnings>true</showWarnings>
@@ -419,15 +424,16 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
                         <configuration>
-                            <release>21</release>
+                            <source>21</source>
+                            <target>21</target>
                             <encoding>UTF-8</encoding>
                             <compilerArgs>
                                 <!-- Enable and configure Error Prone. -->
                                 <arg>-XDcompilePolicy=simple</arg>
                                 <arg>
                                     -Xplugin:ErrorProne
-<!--                                    -XepDisableAllChecks-->
-<!--                                    -Xep:Unused:WARN-->
+                                    -XepDisableAllChecks
+                                    -Xep:OverdueTodoReminder:WARN
                                     <!-- We use a separate Maven profile to
                                     raise all warnings as errors. This way one
                                     can optionally collect all warnings without
@@ -488,8 +494,8 @@
                                 </path>
                                 <path>
                                     <groupId>com.github.torrespro</groupId>
-                                    <artifactId>AutoQuality-Playground</artifactId>
                                     <version>0.0.1</version>
+                                    <artifactId>error-prone-contrib</artifactId>
                                 </path>
                             </annotationProcessorPaths>
                             <showWarnings>true</showWarnings>
@@ -519,4 +525,10 @@
             <url>https://jitpack.io</url>
         </repository>
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
