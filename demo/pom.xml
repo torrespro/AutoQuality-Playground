@@ -117,17 +117,11 @@
             <version>1.2.1</version>
         </dependency>
         <dependency>
-            <groupId>com.github.torrespro.AutoQuality-Playground</groupId>
+            <groupId>com.github.torrespro</groupId>
             <artifactId>archunit-rules</artifactId>
-            <version>main-e12157d2e0-1</version>
+            <version>1.0.0</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.github.torrespro.AutoQuality-Playground</groupId>
-            <artifactId>zally-openapi-lint-rules</artifactId>
-            <version>main-e12157d2e0-1</version>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -290,9 +284,9 @@
                         <dependencies>
                             <!-- The pluggable rule-set you want to run -->
                             <dependency>
-                                <groupId>com.github.torrespro.AutoQuality-Playground</groupId>
+                                <groupId>com.github.torrespro</groupId>
                                 <artifactId>zally-openapi-lint-rules</artifactId>
-                                <version>main-e12157d2e0-1</version>
+                                <version>1.0.0</version>
                             </dependency>
                             <!--              <dependency>-->
                             <!--                <groupId>org.zalando</groupId>-->
@@ -372,9 +366,9 @@
                         <dependencies>
                             <dependency>
                                 <!-- dependency contains com.mycompany.rules.CustomArchRule -->
-                                <groupId>com.github.torrespro.AutoQuality-Playground</groupId>
+                                <groupId>com.github.torrespro</groupId>
                                 <artifactId>archunit-rules</artifactId>
-                                <version>main-e12157d2e0-1</version>
+                                <version>1.0.0</version>
                             </dependency>
                         </dependencies>
                     </plugin>
@@ -405,7 +399,7 @@
                                 </path>
                                 <path>
                                     <groupId>com.github.torrespro</groupId>
-                                    <version>0.0.1</version>
+                                    <version>1.0.0</version>
                                     <artifactId>error-prone-contrib</artifactId>
                                 </path>
                             </annotationProcessorPaths>
