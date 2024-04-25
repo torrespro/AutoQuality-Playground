@@ -24,3 +24,7 @@ Navigate to each one of the links to learn more about the tools, the configurati
 - [Open Rewrite](openRewrite.md)
 
 - [Renovate](renovate.md)
+
+## Libraries available
+
+- [![](https://jitpack.io/v/torrespro/AutoQuality-Playground.svg)](https://jitpack.io/#torrespro/AutoQuality-Playground)

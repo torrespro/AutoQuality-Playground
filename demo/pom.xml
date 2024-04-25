@@ -488,8 +488,8 @@
                                 </path>
                                 <path>
                                     <groupId>com.github.torrespro</groupId>
-                                    <version>0.0.1</version>
                                     <artifactId>error-prone-contrib</artifactId>
+                                    <version>1.0.0</version>
                                 </path>
                             </annotationProcessorPaths>
                             <showWarnings>true</showWarnings>
